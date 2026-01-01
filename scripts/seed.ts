@@ -75,6 +75,10 @@ async function seed() {
   console.log('🌱 Starting database seed...\n');
 
   try {
+    if (!MONGODB_URI) {
+      throw new Error("MONGODB_URI is not set");
+    }
+
     await mongoose.connect(MONGODB_URI);
     console.log('✅ Connected to MongoDB\n');
 
