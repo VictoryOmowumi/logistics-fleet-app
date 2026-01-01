@@ -4,7 +4,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://victorybalogun_db_user:Vicky%40__1997@cluster0.xmxm9hx.mongodb.net/logistics-fleet?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Define schemas inline to avoid import issues
 const UserSchema = new mongoose.Schema({
