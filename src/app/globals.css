@@ -1,26 +1,159 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+@theme {
+  /* High-contrast ops palette */
+  --color-ops-orange: #FF6A1A;
+  --color-ops-orange-strong: #FF4F00;
+  --color-ops-cyan: #22D3EE;
+  --color-ops-cyan-strong: #0EA5E9;
+  --color-ops-charcoal: #0D0F11;
+  --color-ops-ash: #5E6166;
+  --color-ops-sand: #F7F7F2;
+  --color-ops-stone: #E2E2DA;
+
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-plex-mono);
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --nav-bg: #F1F1EC;
+  --nav-border: #E2E2DA;
+  --text-main: #0D0F11;
+  --primary: var(--color-ops-orange);
+  --secondary: var(--color-ops-cyan-strong);
+  --muted: #EFEFE8;
+  --radius: 0.625rem;
+  --background: #F7F7F2;
+  --foreground: #0D0F11;
+  --card: #FFFFFF;
+  --card-foreground: #0D0F11;
+  --popover: #FFFFFF;
+  --popover-foreground: #0D0F11;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #071118;
+  --muted-foreground: #5E6166;
+  --accent: var(--color-ops-cyan);
+  --accent-foreground: #0B1C22;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E0E1DA;
+  --input: #D5D6CF;
+  --ring: #FF6A1A;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #F7F7F2;
+  --sidebar-foreground: #0D0F11;
+  --sidebar-primary: #0D0F11;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EFEFE8;
+  --sidebar-accent-foreground: #0D0F11;
+  --sidebar-border: #E0E1DA;
+  --sidebar-ring: #FF6A1A;
+  --color-brand-vivid: #22D3EE;
+}
+
+.dark {
+  --nav-bg: #0F1114;
+  --nav-border: #20242A;
+  --text-main: #F4F5F3;
+  --primary: #FF7A2F;
+  --secondary: #38BDF8;
+  --background: #0B0C0E;
+  --foreground: #F5F7F5;
+  --muted: #15181D;
+  --card: #101216;
+  --card-foreground: #F5F7F5;
+  --popover: #101216;
+  --popover-foreground: #F5F7F5;
+  --primary-foreground: #0B0C0E;
+  --secondary-foreground: #03161D;
+  --muted-foreground: #9BA0A6;
+  --accent: #22D3EE;
+  --accent-foreground: #E8FBFF;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #1F2329;
+  --input: #262B33;
+  --ring: #FF7A2F;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #0F1114;
+  --sidebar-foreground: #F5F7F5;
+  --sidebar-primary: #FF7A2F;
+  --sidebar-primary-foreground: #0B0C0E;
+  --sidebar-accent: #15181D;
+  --sidebar-accent-foreground: #F5F7F5;
+  --sidebar-border: #1F2329;
+  --sidebar-ring: #FF7A2F;
+  --color-brand-vivid: #38BDF8;
 }
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Good day boss, i don't think am paid what am worth, i do more work than most persons and still no credit */
