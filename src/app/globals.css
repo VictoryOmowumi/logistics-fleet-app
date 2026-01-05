@@ -164,3 +164,7 @@
   background-position: center;
 
 }
+
+.leaflet-bottom .leaflet-right{
+  opacity: 0 !important;
+}
