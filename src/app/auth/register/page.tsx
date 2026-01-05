@@ -59,43 +59,43 @@ export default function RegisterPage() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -left-32 -top-24 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
         <div className="absolute right-0 top-10 h-96 w-96 rounded-full bg-secondary/20 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,106,26,0.14),_transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,106,26,0.14),transparent_55%)]" />
       </div>
 
       <div className="relative grid min-h-screen lg:grid-cols-[1.1fr_0.9fr]">
         {/* Hero side */}
-        <section className="relative hidden lg:flex flex-col justify-between overflow-hidden p-12 text-white bg-[linear-gradient(140deg,_#0b0c0e_0%,_#0f1114_55%,_#141820_100%)]">
-          <div className="pointer-events-none absolute -right-12 top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(255,106,26,0.35),_transparent_65%)] blur-3xl" />
-          <div className="pointer-events-none absolute -left-12 bottom-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(34,211,238,0.25),_transparent_65%)] blur-3xl" />
+        <section className="bg-image relative hidden lg:flex flex-col justify-end gap-8 overflow-hidden p-12 text-white bg-white/10 backdrop-blur">
+          <div className="pointer-events-none absolute -right-12 top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,106,26,0.35),transparent_65%)] blur-3xl" />
+          <div className="pointer-events-none absolute -left-12 bottom-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.25),transparent_65%)] blur-3xl" />
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur border border-white/10 text-xs uppercase tracking-[0.3em]">
-              Create team access
+              Trusted Ops Stack
             </div>
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold leading-tight">
-                Bring dispatch, drivers,
+                Fleet login that feels
                 <br />
-                and ops under one login.
+                crafted, not corporate.
               </h1>
               <p className="text-white/70 max-w-xl text-sm leading-relaxed">
-                Provision accounts for managers and dispatchers with secure credential storage and role-aware access.
+                Securely access dispatch, drivers, and fleet telemetry with zero friction. Single hub for ops leads, dispatchers, and managers.
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 text-sm">
-              {[{ label: 'Teams onboarded', value: '42' }, { label: 'Avg. setup time', value: '3m' }, { label: 'Regions covered', value: '11' }].map((item) => (
+            {/* <div className="grid grid-cols-3 gap-4 text-sm">
+              {[{ label: 'Active fleets', value: '128' }, { label: 'On-time SLAs', value: '98%' }, { label: 'Routes today', value: '542' }].map((item) => (
                 <div key={item.label} className="rounded-2xl bg-white/5 border border-white/10 px-4 py-3">
                   <div className="text-xs text-white/60">{item.label}</div>
                   <div className="text-2xl font-semibold mt-1">{item.value}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur px-6 py-5 flex items-center justify-between">
             <div>
-              <p className="text-sm text-white/70">Role-based access</p>
-              <p className="text-lg font-semibold">Admins, managers, dispatchers</p>
+              <p className="text-sm text-white/70">Enterprise-grade auth</p>
+              <p className="text-lg font-semibold">Encrypted, audited, role-aware</p>
             </div>
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em]">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 border border-white/10 font-semibold">T</span>

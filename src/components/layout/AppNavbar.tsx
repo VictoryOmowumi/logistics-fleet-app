@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -30,7 +30,12 @@ export const AppNavbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [isAppsOpen, setIsAppsOpen] = useState(false);
+  const [isThemeMounted, setIsThemeMounted] = useState(false);
  
+  useEffect(() => {
+    setIsThemeMounted(true);
+  }, []);
+
   
   const isDark = resolvedTheme === "dark";
   const userName = session?.user?.name || "Team member";
@@ -161,9 +166,15 @@ export const AppNavbar = () => {
           className="w-9 h-9 rounded-full flex items-center justify-center bg-muted/70 text-foreground shadow-sm hover:bg-muted transition-colors"
           aria-label="Toggle theme"
         >
-          {
-            isDark ? <SunDimIcon size={18} weight="bold" /> : <MoonStarsIcon size={18} weight="bold" />
-          }
+          {isThemeMounted ? (
+            isDark ? (
+              <SunDimIcon size={18} weight="bold" />
+            ) : (
+              <MoonStarsIcon size={18} weight="bold" />
+            )
+          ) : (
+            <span className="block h-[18px] w-[18px]" aria-hidden />
+          )}
         </button>
 
         {/* Divider */}

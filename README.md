@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Truck&Co Logistics Fleet App
+
+![Truck&Co App Banner](public/app-banner.png)
+
+Truck&Co is a modern logistics operations dashboard for dispatch, fleet oversight, and order tracking. It brings together map-based visibility, operational insights, and streamlined management workflows in a polished Next.js experience.
+
+## Highlights
+
+- Dispatch console with live map context powered by Leaflet
+- Drivers, vehicles, orders, and users management pages
+- Auth flows including verification and password reset
+- Responsive UI with theme support and modern component primitives
+
+## Tech Stack
+
+- Next.js 16 (App Router) + React 19
+- Tailwind CSS + Radix UI + Phosphor icons
+- NextAuth for authentication
+- MongoDB with Mongoose
+- Resend for transactional email
+- Leaflet + React-Leaflet for maps
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm (or pnpm/yarn)
+- MongoDB instance (local or Atlas)
+- Resend API key (optional, for email flows)
+
+### Setup
+
+1. Install dependencies
+   ```bash
+   npm install
+   ```
+2. Create `.env.local` at the project root
+   ```bash
+   MONGODB_URI=your-mongodb-connection-string
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your-secret
+   RESEND_API_KEY=your-resend-api-key
+   EMAIL_FROM="TruckCo Logistics <no-reply@truckco.com>"
+   EMAIL_PROVIDER=resend
+   ```
+3. Start the dev server
+   ```bash
+   npm run dev
+   ```
+
+Open `http://localhost:3000` in your browser.
+
+## Scripts
+
+- `npm run dev` Start the development server
+- `npm run build` Build for production
+- `npm run start` Start the production server
+- `npm run lint` Run ESLint
+
+## Project Structure
+
+- `src/app` App Router routes and pages
+- `src/components` UI building blocks and shared components
+- `public` Static assets including the app banner
+
+## Deployment
+
+Build and run locally with:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
