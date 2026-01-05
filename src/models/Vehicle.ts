@@ -1,6 +1,6 @@
-import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongoose, { Schema, Model } from 'mongoose';
 
-export interface IVehicle extends Document {
+export interface IVehicle {
   _id: mongoose.Types.ObjectId;
   name: string;
   plateNumber: string;

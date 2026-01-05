@@ -484,11 +484,11 @@ export function DataGrid<T extends object = object>({
   }
 }
 
-function getValue<T extends Record<string, unknown>>(row: T, key: string | keyof T) {
+function getValue<T extends object>(row: T, key: string | keyof T) {
   const path = String(key).split(".");
-  let current: any = row;
+  let current: unknown = row;
   for (const part of path) {
-    if (current && typeof current === "object" && part in current) {
+    if (current && typeof current === "object" && part in (current as Record<string, unknown>)) {
       current = (current as Record<string, unknown>)[part];
     } else {
       return "";

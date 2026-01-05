@@ -1,7 +1,7 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 import Counter from "@/models/Counter";
 
-export interface IOrder extends Document {
+export interface IOrder {
   _id: mongoose.Types.ObjectId;
   orderNumber: string;
   status: 'pending' | 'assigned' | 'picked_up' | 'in_transit' | 'delivered' | 'cancelled';

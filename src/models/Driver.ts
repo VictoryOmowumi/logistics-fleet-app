@@ -1,6 +1,6 @@
-import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongoose, { Schema, Model } from 'mongoose';
 
-export interface IDriver extends Document {
+export interface IDriver {
   _id: mongoose.Types.ObjectId;
   name: string;
   email: string;
